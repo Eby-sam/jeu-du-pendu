@@ -25,6 +25,7 @@ h1 {
     margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
+    background: linear-gradient(#0dff0d, #0077ff, red);
 }
 
 #user {
@@ -36,6 +37,7 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #result {
@@ -46,6 +48,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #echec {
@@ -56,6 +59,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #envois {
