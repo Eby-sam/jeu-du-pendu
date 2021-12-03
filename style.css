@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#container {
+    width: 95%;
+    height: 90vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#user {
+    width: 30%;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#result {
+    width: 30%;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#echec {
+    width: 30%;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#envois {
+    width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 3.5rem;
+}
+
+#champ {
+    width: 200px;
+    height: 110px;
+    font-size: 4.5rem;
+    border-radius: 10px;
+
+}
+
+#resulta {
+    font-size: 3.5rem;
+}
+
+#indice {
+    font-size: 2.5rem;
+}
