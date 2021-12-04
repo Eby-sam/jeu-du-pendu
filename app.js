@@ -1,108 +1,67 @@
-let user = document.getElementById('champ');
-let result = document.getElementById('resulta');
-let add = document.getElementById('envois');
-let trial = 10;
-let victory = 0;
-let letterUtil = [];
-let array = [];
+let input = document.getElementById("user-letter");
+let buttonVerify = document.getElementById("letterTry");
+let divEssai = document.getElementById("essai");
+let guessWord = document.getElementById("guessWord");
+let answerTableau = [];
+let essais = 10;
+let inputWord = document.getElementById("user-word");
+let buttonTry = document.getElementById("wordTry");
+let divPropose = document.getElementById("lettreP");
 let tab = [
     "orange","pomme","poire","banane","telephone","ordinateur","android","apple","linux","mac","ios","windows",
     "confiture","voiture","porche","camion","manga","anime","drama",'live-action',"livre","music","film","sourie",
     "chat","chien","dragon","serpen","poison","scorpion","couleur","ancien","nouveau","neuf","beau","belle","moche"
 ]
+let motRandom = tab[Math.floor(Math.random()*tab.length)];
 
-let wordA = '';
+divEssai.innerHTML = "essais restant " + essais;
 
-function recup () {
-    wordA = tab[Math.floor(Math.random() * tab.length)];
+
+for (let x = 0; x < motRandom.length; x++) {
+    answerTableau[x] = "_";
+    guessWord.innerHTML = answerTableau.join(" ");
 }
 
-function actualWord () {
-    let space = tab.join(' ');
-    result.innerHTML = space;
-}
+buttonVerify.addEventListener("click", function () {
+    let letter = input.value;
+    let nice = true;
 
-function attendNum () {
-    document.getElementById('attent').innerHTML = ' ' + trial.toString();
-}
-
-function vicNumber () {
-    document.getElementById('vicNum').innerHTML = victory.toString();
-}
-
-function letterU () {
-    let space = letterUtil.join(', ');
-    letterUtil.innerHTML = space;
-}
-
-user = user.value;
-
-function addLetter (user) {
-    let repeatLetter = letterUtil.some(function (item) {
-        return item === user;
-    })
-    if(repeatLetter) {
-        alert('cette lettre a deja était utilisé !!!');
-    }
-
-    else {
-        letterUtil.push(user);
-        letterU();
-        letterW(user);
-    }
-}
-
-function letterW (carac) {
-    let good = false;
-    let current = wordA.split('');
-    for(let i = 0 ; i < current.length ; i++) {
-        if(carac.toLowerCase() === current[i]) {
-            array[i] = carac.toLowerCase();
-            actualWord();
-            good = true;
-            if(array.join('') === wordA) {
-                alert('trouvé !!!');
-                victory = victory +1;
-                vicNumber();
-            }
+    for (let x = 0; x < motRandom.length; x++) {
+        if (motRandom[x] === letter) {
+            answerTableau[x] = letter;
+            guessWord.innerHTML = answerTableau.join(" ");
+            divPropose.innerHTML += " - " + letter;
+        }
+        else if (!motRandom.includes(letter)) {
+            nice = false;
         }
     }
-    if (good === false) {
-        trial = trial -1;
-        attendNum();
-        if(trial === 0) {
-            alert('perdu !!!' + wordA);
-        }
+    if (!nice) {
+        essais--;
+        divEssai.innerHTML = "essais restant " + essais;
+        divPropose.innerHTML += " - " + letter;
     }
-}
+    if (essais <= 0) {
+        alert("Perdu ! Le mot était : " + motRandom);
+        window.location.reload();
+    }
+    if (!answerTableau.includes("_")) {
+        alert("Gagné !");
+        window.location.reload();
+    }
 
-function elder () {
-    array.length = wordA.length;
-    array.fill('_');
-}
-
-function reset () {
-    letterUtil = [];
-    array = [];
-    trial = 10;
-}
-
-function start () {
-    reset();
-    recup();
-    actualWord();
-    attendNum();
-    vicNumber();
-    letterW();
-    elder();
-}
-
-document.getElementById('envois').addEventListener('click', function () {
-    addLetter();
 })
 
+buttonTry.addEventListener("click", function () {
+    let word = inputWord.value;
 
+    if (word === motRandom) {
+        alert("Gagné !");
+        window.location.reload();
+    }
 
-document.getElementById('go').addEventListener('click', function() {
-    start();
+    else if (word !== motRandom) {
+        alert("Perdu ! Le mot était : " + motRandom);
+        window.location.reload();
+    }
 })

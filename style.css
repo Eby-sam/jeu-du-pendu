@@ -11,6 +11,8 @@ html {
 h1 {
     text-align: center;
     margin-top: 1rem;
+    font-size: 4.5rem;
+
 }
 
 #container {
@@ -28,6 +30,10 @@ h1 {
     background: linear-gradient(#0dff0d, #0077ff, red);
 }
 
+.size {
+    font-size: 2.5rem;
+}
+
 #user {
     width: 30%;
     height: 90%;
@@ -38,6 +44,7 @@ h1 {
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.4);
+
 }
 
 #result {
@@ -49,38 +56,22 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.4);
+    padding: 2%;
+    font-size: 3.5rem;
+    color: white;
 }
 
-#echec {
-    width: 30%;
-    height: 90%;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-#envois {
+#letterTry {
     width: 200px;
     height: 70px;
     border-radius: 10px;
     font-size: 3.5rem;
 }
 
-#champ {
+#user-letter {
     width: 200px;
     height: 110px;
     font-size: 4.5rem;
     border-radius: 10px;
 
-}
-
-#resulta {
-    font-size: 3.5rem;
-}
-
-#indice {
-    font-size: 2.5rem;
 }

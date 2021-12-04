@@ -7,22 +7,22 @@
     <script src="app.js" async></script>
 </head>
 <body>
-
-    <h1>Jeu du Pendu</h1>
-    <button id="go">commencé</button>
+<h1>Jeu du Pendu</h1>
     <div id="container">
         <div id="user">
-            <p id="indice"></p>
-            <input type="text" name="letter" id="champ">
-            <button id="envois">envoi</button>
-            <p>nombre de tentatives => <span id="attent"></span></p>
-            <p>nombres de victoires => <span id="vicNum"></span></p>
-            <p>lettres utilisé => <span id="letterUtile"></span></p>
+            <div id="essai" class="size"></div>
+            <input type="text" id="user-letter">
+            <button type="button" id="letterTry">envoi</button>
+            <div>
+                <div class="size" >lettres essayées :</div>
+                <div id="lettreP" class="size"></div>
+            </div>
+
         </div>
         <div id="result">
-            <p id="resulta">Hello</p>
+            <div id="guessWord"></div>
         </div>
-        <div id="echec">
+        <div>
 
         </div>
     </div>
