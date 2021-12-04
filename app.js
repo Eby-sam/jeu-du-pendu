@@ -4,8 +4,6 @@ let divEssai = document.getElementById("essai");
 let guessWord = document.getElementById("guessWord");
 let answerTableau = [];
 let essais = 10;
-let inputWord = document.getElementById("user-word");
-let buttonTry = document.getElementById("wordTry");
 let divPropose = document.getElementById("lettreP");
 let tab = [
     "orange","pomme","poire","banane","telephone","ordinateur","android","apple","linux","mac","ios","windows",
@@ -50,18 +48,4 @@ buttonVerify.addEventListener("click", function () {
         window.location.reload();
     }
 
-})
-
-buttonTry.addEventListener("click", function () {
-    let word = inputWord.value;
-
-    if (word === motRandom) {
-        alert("Gagné !");
-        window.location.reload();
-    }
-
-    else if (word !== motRandom) {
-        alert("Perdu ! Le mot était : " + motRandom);
-        window.location.reload();
-    }
 })
